@@ -2,8 +2,9 @@
 一个滚动表头固定顶部的jQuery插件，支持页面固定及容器内固定
 
 # Demo
-见 `./index.html`
-![Demo]（./test.gif）
+见文件 `./index.html` 
+
+![Demo](https://github.com/imwtr/jquery-tableHeaderFixed/blob/master/test.gif)
 
 
 # 如何使用
