@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            /*position: relative;*/
+        }
+        .header {
+            width: 100%;
+            height: 100px;
+        }
+        .content {
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        table.table-fixed-header {
+            display: none;
+        }
+        table {
+            /*position: relative;*/
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        table th {
+            background-color: #68b1ae;
+            color: #fff;
+        }
+        table th,
+        table td {
+            padding: 10px 20px;
+            border: 1px solid #eee;
+        }
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .page-table-test {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>I'm header</h1>
+    </div>
+
+    <div class="content">
+        <table class="content-table-test">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>年龄</th>
+                    <th>地址</th>
+                    <th>时间</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <table class="page-table-test">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>地址</th>
+                <th>时间</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script type="text/template" id="table-data-tpl">
+        {{#each this}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{sex}}</td>
+            <td>{{age}}</td>
+            <td>{{address}}</td>
+            <td>{{time}}</td>
+        </tr>
+        {{/each}}
+    </script>
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/handlebars.js/4.0.10/handlebars.min.js"></script>
+    <script src="./dist/jquery.tableHeaderFixed.min.js"></script>
+    <script>
+
+        function getHtml(source, data) {
+            var template = Handlebars.compile(source);
+            return template(data);
+        };
+
+        var data = [{
+            name: '张飞1',
+            sex: '男',
+            age: '12',
+            address: '我是地址',
+            time: '12；32'
+        }, {
+            name: '张飞2',
+            sex: '男',
+            age: '21',
+            address: '我是地址',
+            time: '01；32'
+        }];
+
+        for (var i = 0; i < 5; ++i) {
+            data = data.concat(data);
+        }
+
+
+        var dataTpl = $('#table-data-tpl').html(),
+            $pageTableTest = $('.page-table-test')
+            $contentTableTest = $('.content-table-test');
+
+        $pageTableTest.find('tbody').html(getHtml(dataTpl, data))
+            .end().tableHeaderFixed();
+
+        $contentTableTest.find('tbody').html(getHtml(dataTpl, data))
+            .end().tableHeaderFixed({
+                fixedInContainer: true,
+                containerMaxHeight: 300
+            });
+
+
+    </script>
+</body>
+</html>
