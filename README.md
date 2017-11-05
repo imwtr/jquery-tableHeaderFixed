@@ -1,0 +1,2 @@
+# tableHeaderFixed
+一个滚动表头固定顶部的jQuery插件，支持页面固定及容器内固定
