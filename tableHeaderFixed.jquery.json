@@ -1,0 +1,26 @@
+{
+    "name": "tableHeaderFixed",
+    "title": "jQuery TableHeaderFixed",
+    "description": "一个滚动表头固定顶部的jQuery插件，支持页面固定及容器内固定",
+    "keywords": [
+        "table",
+        "fixed",
+        "header"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "imwtr"
+        },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/jquery/jquery-tableHeaderFixed/blob/2.1.2/MIT-LICENSE.txt"
+        }
+    ],
+    "homepage": "https://github.com/jquery/jquery-tableHeaderFixed",
+    "docs": "https://github.com/jquery/jquery-tableHeaderFixed",
+    "download": "http://code.jquery.com/#tableHeaderFixed",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
