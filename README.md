@@ -8,7 +8,7 @@
 
 
 # 如何使用
-提供的参数选项
+默认参数选项
 ```javascript
        {
             // 表头在页面滚动时固定在头部
@@ -24,7 +24,7 @@
         };
 
 ```
-默认设置了固定的表头类名，可自定义。需要设置此项初始隐藏
+需要设置固定表头类名为初始隐藏
 ```css
   .table-fixed-header {
       display: none;
@@ -34,15 +34,15 @@
 默认设置为固定于页面顶部
 ```javascript
   $('.page-table-test').find('tbody').html(getHtml(dataTpl, data))
-      .end().tableHeaderFixed();
+       .end().tableHeaderFixed();
 ```
 
 自定义设置为固定于容器里
 ```javascript
-$('.content-table-test').find('tbody').html(getHtml(dataTpl, data))
-     .end().tableHeaderFixed({
-          fixedInContainer: true,
-          containerMaxHeight: 300
-     });
+  $('.content-table-test').find('tbody').html(getHtml(dataTpl, data))
+      .end().tableHeaderFixed({
+           fixedInContainer: true,
+           containerMaxHeight: 300
+      });
 ```
 
